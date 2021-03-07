@@ -1,0 +1,22 @@
+Configuration:
+
+  Appenders:
+    Console:
+      name: Console
+      target: SYSTEM_OUT
+      PatternLayout:
+        Pattern: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+    File:
+      name: File_Appender
+      fileName: ./logs/logfile.log
+      PatternLayout:
+        Pattern: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+
+  Loggers:
+    Root:
+      level: debug
+      AppenderRef:
+        - ref: Console
+          level: error
+        - ref: File_Appender
+          level: debug
